@@ -1,10 +1,26 @@
 <table class="w-full">
   <thead>
-    <tr class="flex justify-between px-4">
+    <tr class="grid grid-cols-4">
       <th>From</th>
       <th>To</th>
       <th>Date</th>
       <th>Favourite</th>
     </tr>
   </thead>
+  <tbody>
+    <tr *ngFor="let row of rows" class="grid grid-cols-4">
+      <td>
+        <p class="text-center">{{row.sourceCurrency}} {{row.sourceValue}}</p>
+      </td>
+      <td>
+        <p class="text-center">{{row.targetCurrency}} {{row.targetValue}}</p>
+      </td>
+      <td>
+        <p class="text-center">{{row.data}}</p>
+      </td>
+      <td>
+        <img src="../../assets/images/Star.svg" alt="" class="m-auto cursor-pointer">
+      </td>
+    </tr>
+  </tbody>
 </table>

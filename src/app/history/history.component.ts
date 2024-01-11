@@ -1,6 +1,7 @@
-import { Component  } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableComponent } from '../table/table.component';
+
 
 @Component({
   selector: 'history',
@@ -10,9 +11,8 @@ import { TableComponent } from '../table/table.component';
   styleUrl: './history.component.sass',
 })
 export class History {
-  table = [1, 2, 3, 4]
-  myFunction() {
-    this.table.push(this.table.length+1);
-    console.log(this.table);
+  @ViewChild(TableComponent) table!: TableComponent;
+  myFunction(data: any) {
+    this.table.AddRow(data);
   }
 }
