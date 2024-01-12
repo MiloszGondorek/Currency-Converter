@@ -10,9 +10,14 @@ import { TableComponent } from '../table/table.component';
   templateUrl: './history.component.html',
   styleUrl: './history.component.sass',
 })
+
 export class History {
   @ViewChild(TableComponent) table!: TableComponent;
-  myFunction(data: any) {
-    this.table.AddRow(data);
+  addToHistory(data: any) {
+    const table=this.table;
+    table.AddRow(data);
+    if(table.rows.length>10){
+      table.rows.splice(0,1);
+    }
   }
 }

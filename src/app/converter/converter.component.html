@@ -7,7 +7,7 @@
   </div>
 
   <div class="input_div w-1/2 flex p-2 ml-4">
-    <input maxlength="12" disabled/>
+    <input maxlength="12" disabled value="{{result}}"/>
      <select class="ml-auto block" [(ngModel)]="targetCurrency">
        <option *ngFor="let val of values">{{ val }}</option>
      </select>

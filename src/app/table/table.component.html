@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let row of rows" class="grid grid-cols-4">
+    <tr *ngFor="let row of rows.slice().reverse()" class="grid grid-cols-4">
       <td>
         <p class="text-center">{{row.sourceCurrency}} {{row.sourceValue}}</p>
       </td>

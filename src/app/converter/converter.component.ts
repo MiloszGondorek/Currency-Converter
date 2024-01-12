@@ -15,18 +15,16 @@ export class Converter {
   sourceCurrency='PLN';
   sourceValue = 0;
   targetCurrency = 'EUR';
+  result=0;
 
   @Output() dataEvent: EventEmitter<any> = new EventEmitter();
   sendData() {
-    const data={source:this.sourceCurrency,value:this.sourceValue,target:this.targetCurrency}
+    const data={source:this.sourceCurrency,value:this.sourceValue,target:this.targetCurrency,result:0}
     this.dataEvent.emit(data);
+  }
+  
+  setResult(result:number){
+    this.result=result;
   }
 }
 
-/*
-  EUR 1
-  PLN 4.34
-  USD 1.09
-  GBP 0.86
-  CAD 1.46
-  */
