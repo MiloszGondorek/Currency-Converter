@@ -27,8 +27,6 @@ export class AppComponent {
       data.sourceValue
     ).toFixed(2);
 
-    data.targetValue = this.getRandomInt(1, 1134);
-
     this.historyChild.addToHistory(data);
     this.converter.setResult(data.targetValue);
   }
