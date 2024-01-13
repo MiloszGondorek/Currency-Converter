@@ -1,19 +1,28 @@
 <div class="inputs flex">
   <div class="input_div w-1/2 flex p-2">
-   <input maxlength="12" type="number" min="0" [(ngModel)]="sourceValue"/>
+    <input
+      class="w-full"
+      maxlength="12"
+      type="number"
+      min="0"
+      [(ngModel)]="sourceValue"
+    />
     <select class="ml-auto block" [(ngModel)]="sourceCurrency">
       <option *ngFor="let val of values">{{ val }}</option>
     </select>
   </div>
 
   <div class="input_div w-1/2 flex p-2 ml-4">
-    <input maxlength="12" disabled value="{{result}}"/>
-     <select class="ml-auto block" [(ngModel)]="targetCurrency">
-       <option *ngFor="let val of values">{{ val }}</option>
-     </select>
-   </div>
+    <input maxlength="12" disabled value="{{ result }}" />
+    <select class="ml-auto block" [(ngModel)]="targetCurrency">
+      <option *ngFor="let val of values">{{ val }}</option>
+    </select>
+  </div>
 </div>
 
-<button class="ml-auto w-fit block rounded-sm px-5 py-1 text-base mt-3" (click)="sendData()">
+<button
+  class="ml-auto w-fit block rounded-sm px-5 py-1 text-base mt-3"
+  (click)="sendData()"
+>
   Convert
 </button>
