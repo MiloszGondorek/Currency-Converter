@@ -19,7 +19,8 @@
         <p class="text-center">{{row.data}}</p>
       </td>
       <td>
-        <img src="../../assets/images/Star.svg" alt="" class="m-auto cursor-pointer">
+        <img *ngIf="row.inHistory" src="../../assets/images/Star.svg" alt="" class="m-auto cursor-pointer" (click)="addToFav(row.id)">
+        <img *ngIf="!row.inHistory" src="../../assets/images/Star_fill.svg" alt="" class="m-auto cursor-pointer" (click)="reomveFromFav(row.id,true)">
       </td>
     </tr>
   </tbody>

@@ -19,12 +19,13 @@ export class Converter {
 
   @Output() dataEvent: EventEmitter<any> = new EventEmitter();
   sendData() {
-    const data={source:this.sourceCurrency,value:this.sourceValue,target:this.targetCurrency,result:0}
+    const data={sourceCurrency:this.sourceCurrency,sourceValue:this.sourceValue,targetCurrency:this.targetCurrency,result:0}
     this.dataEvent.emit(data);
   }
   
   setResult(result:number){
     this.result=result;
   }
+
 }
 

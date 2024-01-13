@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { TableComponent } from '../table/table.component';
 import { CommonModule } from '@angular/common';
-import { Row } from '../table/table.component';
+import { Saved } from '../app.component';
 
 @Component({
   selector: 'favourite',
@@ -26,24 +26,3 @@ export class Favourite {
   }
 }
 
-export class Saved {
-  static lastChange = 'asd';
-  static rows: Row[] = [];
-  private static subscriber: Function | undefined;
-  static addToRows() {
-    const data = { source: 'PLN', value: 123, target: 'EUR', result: 222 };
-    this.rows.push(new Row(data));
-    this.notifySubscribers();
-  }
-  static getData() {
-    return this.rows;
-  }
-  static subscribe(callback: Function): void {
-    this.subscriber = callback;
-  }
-  private static notifySubscribers(): void {
-    if (this.subscriber) {
-      this.subscriber();
-    }
-  }
-}
