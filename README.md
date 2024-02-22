@@ -19,7 +19,7 @@ Angular Unit Converter is a simple project built in the Angular framework that a
   git clone https://github.com/MiloszGondorek/Currency-Converter.git
 
 ### Install dependencies:
-  cd Currency-Converter
+  cd Currency-Converter &&
   npm install
 
 ### Run the local development server:
